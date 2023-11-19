@@ -8,7 +8,7 @@ import androidx.lifecycle.ViewModel
 class ACViewModel : ViewModel() {
     @SuppressLint("StaticFieldLeak")
     val act = AdvancedCalculatorActivity()
-    var input: MutableLiveData<String> = MutableLiveData()
+    var input: MutableLiveData<String> = MutableLiveData("")
     var output = MutableLiveData<String>()
 
 }

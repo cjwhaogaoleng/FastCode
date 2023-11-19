@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="10dp"
     tools:context=".module.postLogin.home.interestCalculation.LoanFragment"
 
     >
@@ -22,23 +21,24 @@
         >
 
         <TextView
-            android:layout_width="70dp"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:text="存款:"
-            android:textSize="30dp"/>
+            android:textSize="20dp"/>
 
         <EditText
-            android:layout_width="100dp"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="20dp"
+            android:textSize="20dp"
             />
 
         <TextView
-            android:layout_width="70dp"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:text="利息"
-            android:layout_marginLeft="50dp"
-            android:textSize="30dp"
+            android:layout_marginLeft="40dp"
+            android:textSize="20dp"
             />
 
 

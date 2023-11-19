@@ -62,7 +62,6 @@ class AdvancedCalculatorActivity : AppCompatActivity() {
 
     private val TAG = "KeyboardFragment"
 
-        @RequiresApi(Build.VERSION_CODES.P)
         fun click(view: View) {
             toast(this,"dian")
 
@@ -97,6 +96,10 @@ class AdvancedCalculatorActivity : AppCompatActivity() {
                         getResult(deg, object : VolleyCallback {
                             override fun onSuccess(result: String?) {
                                 viewModel.input.postValue(result)
+                            }
+
+                            override fun onSuccess(result: List<String>) {
+                                TODO("Not yet implemented")
                             }
                         })
                         calculateFlag = true

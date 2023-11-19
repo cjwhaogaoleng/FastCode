@@ -38,15 +38,24 @@ class RegisterActivity : AppCompatActivity() {
          register(username,password1,password2, context = this, callback = object : VolleyCallback {
                 override fun onSuccess(result: String?) {
                     if (result == "success") {
-                        toast(this@RegisterActivity, "注册成功")
-                        this@RegisterActivity.finish()
+                        this.run { runOnUiThread {
+                            toast(this@RegisterActivity, "注册成功")
+                            this@RegisterActivity.finish()
+                        } }
+
                     } else {
-                        toast(this@RegisterActivity, "注册失败")
+                        this.run { runOnUiThread {
+                            toast(this@RegisterActivity, "注册失败")
+                        } }
 
                     }
                 }
 
-            })
+             override fun onSuccess(result: List<String>) {
+                 TODO("Not yet implemented")
+             }
+
+         })
 
     }
 

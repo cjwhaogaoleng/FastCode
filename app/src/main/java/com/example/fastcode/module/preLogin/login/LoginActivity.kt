@@ -61,6 +61,10 @@ class LoginActivity : AppCompatActivity() {
 //                            toast(this@LoginActivity, "用户名或者密码错误")
                     }
 
+                    override fun onSuccess(result: List<String>) {
+                        TODO("Not yet implemented")
+                    }
+
                 })
             }
             binding.goToRegister.id -> {

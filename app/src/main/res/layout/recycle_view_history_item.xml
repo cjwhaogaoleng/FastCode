@@ -13,9 +13,12 @@
         android:layout_height="match_parent">
 
         <TextView
+            android:gravity="center_vertical"
+            android:id="@+id/tv_history_item"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@{history.history}"
+            android:layout_height="60dp"
+
             />
+<!--        android:text="@{history.history}"-->
     </LinearLayout>
 </layout>
