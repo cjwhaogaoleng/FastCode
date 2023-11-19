@@ -11,6 +11,7 @@ cal_api = Blueprint('cal_app', __name__)
 @app.route('/get_result',methods=['POST'])
 def get_result():
     data = request.form.get("formula")
+    idd=request.form.get("id")
     dx = request.form.get("deg")
     fx=data
     data=data.replace("^","**")
@@ -42,6 +43,7 @@ def get_result():
     data=data.replace("e", "np.exp(1)")
     data=re.sub("\|(\d+)\|",lambda x: "np.abs("+str(x.group(1))+")",data)
     data=data.replace("mod", "%")
+    data=data.replace("×", "*")
     data=data.replace("log(", "np.log10(")
     data=data.replace("ln(", "np.log(")
     data=re.sub("(\d+)!",lambda x: "math.factorial("+str(x.group(1))+")",data)
@@ -62,42 +64,18 @@ def get_result():
     if f==0:
         if len(data>10):
             data=str('{:g}'.format(float(data)))
-        new_history=History(number=data,formula=fx)
+        new_history=History(number=data,formula=fx,user_id=idd)
         db.session.add(new_history)
         db.session.commit()
     return jsonify({'result': data, 'message': 'success'})
-        
-@app.route('/read_history',methods=['POST'])
-def read_history():
-    idd=request.form.get('id')
-    h=History.query.get(idd)
-    data={
-        "number":h.number,
-        "formula":h.formula
-    }
-    return jsonify({'result': data, 'message': 'success'})
-
 @app.route('/read_all_history',methods=['POST'])
 def read_all_history():
-    h=History.query.order_by(History.id)
+    idd=request.form.get("id")
+    h=History.query.filter(History.user_id==idd).order_by(History.id)
     data=""
     for hh in h:
         data=data+str(hh.formula)+"="+str(hh.number)+","
     return jsonify({'result': data, 'message': 'success'})
-
-@app.route('/delete_history',methods=['POST'])
-def delete_history():
-    idd=request.form.get('id')
-    h=History.query.get(idd)
-    db.session.delete(h)
-    db.session.commit()
-    return jsonify({'result': 'success'})
-
-@app.route('/delete_all_history',methods=['POST'])
-def delete_all_history():
-    db.session.query(History).delete()
-    db.session.commit()
-
 
 
 @app.route('/loanOrDeposit',methods=['POST'])

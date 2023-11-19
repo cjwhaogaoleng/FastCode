@@ -13,11 +13,6 @@ app.config.from_object(configs)
 # db绑定app
 db = SQLAlchemy(app)
 
-class History(db.Model):
-    __tablename__ = 'History'
-    id = db.Column(db.Integer, primary_key=True)  # 设置主键, 默认自增
-    number=db.Column(db.Integer)
-    formula=db.Column(db.String(100))
 
 class User(db.Model):
     __tablename__ = 'User'
@@ -25,6 +20,14 @@ class User(db.Model):
     name=db.Column(db.String(100))
     password=db.Column(db.String(100))
     
+class History(db.Model):
+    __tablename__ = 'History'
+    id = db.Column(db.Integer, primary_key=True)  # 设置主键, 默认自增
+    number=db.Column(db.Integer)
+    formula=db.Column(db.String(100))
+    user_id = db.Column(db.Integer(),db.ForeignKey('User.id'))
+    user = db.relationship('User', backref=db.backref('records'))
+
 class Loan(db.Model):
     __tablename__ = 'Loan'
     id = db.Column(db.Integer, primary_key=True)  # 设置主键, 默认自增
