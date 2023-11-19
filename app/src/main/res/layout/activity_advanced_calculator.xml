@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="kb_click"
+            type="com.example.fastcode.module.postLogin.home.advancedCalculater.AdvancedCalculatorActivity"/>
+
+        <variable
+            name="viewModle"
+            type="com.example.fastcode.module.postLogin.home.advancedCalculater.ACViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background"
+        android:orientation="vertical"
+        android:padding="40dp"
+        tools:context=".module.postLogin.home.advancedCalculater.AdvancedCalculatorActivity">
+
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/icon_back" />
+
+
+        <ImageView
+            android:layout_width="160dp"
+            android:layout_height="58dp"
+            android:layout_gravity="center"
+            android:src="@drawable/text_ac" />
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="550dp"
+            android:orientation="vertical"
+            android:background="@drawable/history_background"
+            tools:context=".module.keyboard.KeyboardFragment"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:height="60dp"
+                android:background="@drawable/background_et_grey"
+                android:gravity="center_vertical"
+                android:text="@{viewModle.input}"
+                android:paddingStart="12dp"
+                />
+
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/bt_2nd"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="@{(view)->kb_click.click(view)}"
+                    android:text="2nd"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/bt_sin"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="@{(view)->kb_click.click(view)}"
+
+                    android:text="sin"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/bt_cos"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="@{(view)->kb_click.click(view)}"
+
+                    android:text="cos"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/bt_tan"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="@{(view)->kb_click.click(view)}"
+
+                    android:text="tan"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/bt_DEG"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="@{(view)->kb_click.click(view)}"
+
+                    android:text="DEG"
+                    android:textAllCaps="false" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/bt_square"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="@{(view)->kb_click.click(view)}"
+
+                    android:text="x^2"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/bt_pi"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="@{(view)->kb_click.click(view)}"
+                    android:text="π"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/bt_e"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="@{(view)->kb_click.click(view)}"
+
+                    android:text="e"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/bt_clear"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="@{(view)->kb_click.click(view)}"
+
+                    android:text="C"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/bt_delete"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="@{(view)->kb_click.click(view)}"
+
+                    android:text="⬅"
+                    android:textAllCaps="false" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/bt_sqrt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="@{(view)->kb_click.click(view)}"
+
+                    android:text="2√x"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/bt_reciprocal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="@{(view)->kb_click.click(view)}"
+
+                    android:text="1/x"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/bt_abs"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="@{(view)->kb_click.click(view)}"
+
+                    android:text="|x|"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/bt_exp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="@{(view)->kb_click.click(view)}"
+
+                    android:text="exp"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/bt_mod"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="@{(view)->kb_click.click(view)}"
+
+                    android:text="mod"
+                    android:textAllCaps="false" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/bt_power"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="@{(view)->kb_click.click(view)}"
+
+                    android:text="x^y"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/bt_left_bracket"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="@{(view)->kb_click.click(view)}"
+
+                    android:text="("
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/bt_right_bracket"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="@{(view)->kb_click.click(view)}"
+
+                    android:text=")"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/bt_factorial"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="@{(view)->kb_click.click(view)}"
+
+                    android:text="n!"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/bt_divide"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="@{(view)->kb_click.click(view)}"
+                    android:text="÷"
+                    android:textAllCaps="false" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/bt_10_power"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="@{(view)->kb_click.click(view)}"
+                    android:text="10^x"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/bt_7"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="@{(view)->kb_click.click(view)}"
+                    android:text="7"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/bt_8"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="@{(view)->kb_click.click(view)}"
+                    android:text="8"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/bt_9"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="@{(view)->kb_click.click(view)}"
+                    android:text="9"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/bt_mutiple"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="@{(view)->kb_click.click(view)}"
+                    android:text="×"
+                    android:textAllCaps="false" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/bt_log"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="@{(view)->kb_click.click(view)}"
+                    android:text="log"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/bt_4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="@{(view)->kb_click.click(view)}"
+                    android:text="4"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/bt_5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="@{(view)->kb_click.click(view)}"
+                    android:text="5"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/bt_6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="@{(view)->kb_click.click(view)}"
+                    android:text="6"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/bt_minus"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="@{(view)->kb_click.click(view)}"
+                    android:text="-"
+                    android:textAllCaps="false" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/bt_ln"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="@{(view)->kb_click.click(view)}"
+                    android:text="ln"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/bt_1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="@{(view)->kb_click.click(view)}"
+                    android:text="1"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/bt_2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="@{(view)->kb_click.click(view)}"
+                    android:text="2"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/bt_3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="@{(view)->kb_click.click(view)}"
+                    android:text="3"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/bt_add"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="@{(view)->kb_click.click(view)}"
+                    android:text="+"
+                    android:textAllCaps="false" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/bt_move"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="@{(view)->kb_click.click(view)}"
+                    android:text="→"
+                    android:textAllCaps="false"
+                    android:clickable="false"
+                    />
+
+                <Button
+                    android:id="@+id/bt_p_n"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="@{(view)->kb_click.click(view)}"
+                    android:text="+/-"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/bt_0"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="@{(view)->kb_click.click(view)}"
+                    android:text="0"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/bt_point"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="@{(view)->kb_click.click(view)}"
+                    android:text="."
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/bt_equal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="@{(view)->kb_click.click(view)}"
+                    android:text="="
+                    android:textAllCaps="false" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>
